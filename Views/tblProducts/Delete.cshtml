@@ -1,0 +1,73 @@
+﻿@model Proj_day11_test.Models.tblProduct
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Xóa sản phẩm</h2>
+
+<h3>Bạn có chắc chắn xóa không ?</h3>
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoryid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoryid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProdName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProdName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagePath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color" style="margin-left: 120px;">
+            <input type="submit" value="Xóa" class="btn btn-danger" /> |
+           <div class="btn btn-primary"> @Html.ActionLink("Quay lại", "Index")</div>
+        </div>
+    }
+</div>

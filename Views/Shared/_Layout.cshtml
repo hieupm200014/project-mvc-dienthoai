@@ -1,0 +1,69 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Haui</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="~/Content/Style.css" type="text/css" />
+    <link href="~/Content/Stylelayout.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1 id="logo-text">Phạm Minh Hiệu - 2018600760</h1>
+            <h2 id="slogan">Lập trình web</h2>
+            <img src="~/Content/img/haui.jfif" />
+        </div>
+        <div id="banner">
+            <img src="~/Content/img/banner.jpg" style="width:1320px; height:171px;" />
+        </div>
+        <div id="menu">
+            <ul>
+                <li id="current"><a href="/">Home</a></li>
+                <li><a href="/home/about">Giới thiệu</a></li>
+                <li><a href="/home/contact">Liên hệ</a></li>
+                <li><a href="#/">Dịch vụ</a></li>
+                <li><a href="#/">Hỗ trợ</a></li>
+                <li class="last"><a href="#/">Giới thiệu</a></li>
+            </ul>
+        </div>
+        <div id="content-wrap">
+            <div id="sidebar">
+                <h1>Tìm kiếm</h1>
+                <form action="#/" class="searchform">
+                    <p>
+                        <input name="search_query" class="textbox" type="text" placeholder="Tìm kiếm..."style="height: 30px;" / >
+                        <input name="search" class="button" value="Search" type="submit" style="height: 30px;"/>
+                    </p>
+                </form>
+                <h1>Category</h1>
+
+                <ul id="sidemenu">
+
+                    <li>@Html.ActionLink("Index", "index", "home")</li>
+                    <li>@Html.ActionLink("Danh mục sản phẩm", "index", "tblcategories")</li>
+                    <li>@Html.ActionLink("Tất cả sản phẩm", "index", "tblproducts")</li>
+                    @{ Html.RenderAction("CategoryMenu", "tblproducts");}
+                    <li>@Html.ActionLink("Đăng xuất", "Logout", "Home")</li>
+                </ul>
+                <br />
+            </div>
+            <div id="main">
+                @RenderBody()
+            </div>
+        </div>
+        <div id="footer">
+            <p>Haui </p>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

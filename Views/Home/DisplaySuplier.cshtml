@@ -1,0 +1,45 @@
+﻿@model PagedList.IPagedList<Proj_day11_test.Models.tblCategory>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "DisplaySuplier";
+}
+
+<h2>DisplaySuplier</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên danh mục
+        </th>
+        <th>
+            Tiêu đề
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MetaTitle)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Categoryid }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Categoryid }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Categoryid })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("DisplaySuplier", new { page }))

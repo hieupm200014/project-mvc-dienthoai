@@ -1,0 +1,79 @@
+﻿@model Proj_day11_test.Models.tblProduct
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi tiết sản phẩm</h2>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoryid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoryid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProdName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProdName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagePath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+    </dl>
+</div>
+<div style="display:flex; margin-left: 120px;">
+    <div class="btn-danger"> @Html.ActionLink("Sửa", "Edit", new { id = Model.Pid }) </div>
+    <div class="btn-primary"> @Html.ActionLink("Quay lại", "Index")</div>
+</div>
+<style>
+    .btn-primary {
+        width: 70px;
+        line-height: 40px;
+        text-align: center;
+        margin-left: 20px;
+    }
+    .btn-danger {
+        width: 70px;
+        line-height: 40px;
+        text-align: center;
+    }
+</style>

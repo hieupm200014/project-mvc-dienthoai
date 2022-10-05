@@ -1,0 +1,10 @@
+﻿@model List<Proj_day11_test.Models.tblCategory>
+@{
+    ViewBag.Title = "CategoryMenu";
+}
+
+@foreach(var item in Model)
+{
+    <li><a href="/tblProducts/ProductByCat?cat=@item.Categoryid">@item.CategoryName</a></li>
+}
+

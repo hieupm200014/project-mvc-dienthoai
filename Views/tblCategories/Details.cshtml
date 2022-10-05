@@ -1,0 +1,35 @@
+﻿@model Proj_day11_test.Models.tblCategory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi tiết danh mục</h2>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaTitle)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.Categoryid }) |
+    @Html.ActionLink("Quay lại", "Index")
+</p>
+
